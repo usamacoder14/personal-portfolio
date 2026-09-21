@@ -124,19 +124,6 @@ This portfolio combines modern web development with clean UI design to create a 
 | CSS3 | Custom styling, visual effects, transitions, and responsive presentation |
 | Tailwind CSS | Responsive layouts, typography, spacing, colors, components, dark mode, and animations |
 | JavaScript | Interactive functionality, UI behavior, navigation, theme switching, animations, and dynamic interactions |
-| React.js | Frontend development knowledge and component-based application development |
-| Bootstrap | Responsive UI components and frontend development |
-| C# | Backend and software development |
-| .NET | Backend application and software development |
-| Node.js | Server-side JavaScript development |
-| Express.js | Backend and API development |
-| PHP | Server-side web development |
-| WordPress | Content management and WordPress website development |
-| Figma | UI/UX design, wireframes, and interface design |
-| Canva | Graphic design and visual content creation |
-| Git | Version control and project management |
-| GitHub | Source code hosting and repository management |
-| VS Code | Development environment and code editing |
 
 ---
 
