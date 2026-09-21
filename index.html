@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+
+                <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Official Ultra-Stable EmailJS CDN Link -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Consolidated Configuration Script (No Broken Links) -->
+    <script type="text/javascript">
+        // EmailJS Initialization
+        (function(){
+            emailjs.init({
+                publicKey: "YXjZAqOW2CU2-seE4",
+            });
+        })();
+
+        // Tailwind Config
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+</head>
+
+<body class="bg-gray-900 text-white font-sans antialiased scroll-smooth">
+
+                                <!-- ==================== Navigation Bar ==================== -->
+<nav class="fixed top-0 left-0 w-full bg-gray-900/90 dark:bg-white/95 backdrop-blur-md shadow-md z-50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="flex items-center justify-between h-16">
+            
+            <!-- 1. LOGO -->
+            <div class="flex-shrink-0">
+                <a href="#home" class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                   Usama H.
+                </a>
+            </div>
+            
+            <!-- 2. DESKTOP LINKS -->
+            <div class="hidden md:flex flex-1 justify-center">
+                <ul class="flex items-center space-x-2">
+                    <li><a href="#home" class="text-gray-300 dark:text-gray-700 hover:text-cyan-400 dark:hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a></li>
+                    <li><a href="#about" class="text-gray-300 dark:text-gray-700 hover:text-cyan-400 dark:hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a></li>
+                    <li><a href="#skills" class="text-gray-300 dark:text-gray-700 hover:text-cyan-400 dark:hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a></li>
+                    <li><a href="#projects" class="text-gray-300 dark:text-gray-700 hover:text-cyan-400 dark:hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a></li>
+                    <li><a href="#contact" class="text-gray-300 dark:text-gray-700 hover:text-cyan-400 dark:hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- 3. DESKTOP BUTTONS (Hidden on Mobile) -->
+            <div class="hidden md:flex items-center gap-8 border-l border-gray-700 dark:border-slate-200 pl-4">
+                <!-- Desktop Theme Toggle -->
+                <button id="theme-toggle" class="text-gray-400 dark:text-gray-600 hover:text-cyan-400 focus:outline-none p-2 rounded-full bg-gray-800 dark:bg-gray-100 transition-colors flex items-center justify-center">
+                    <svg id="theme-toggle-sun" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.121a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm-.707-8.485a1 1 0 011.414 0l.707.707A1 1 0 115.05 7.757l-.707-.707a1 1 0 010-1.414zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z"/></svg>
+                    <svg id="theme-toggle-moon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                </button>
+
+                <!-- Desktop Resume Download Button -->
+                <a id="downloadResumeBtn" href="assets/Curriculum Vitae.pdf" download class="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold transition-all shadow-lg shadow-cyan-500/20 whitespace-nowrap">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download CV
+                </a>
+            </div>
+
+            <!-- 4. MOBILE CONTROLS (Theme Toggle + Hamburger) -->
+            <div class="md:hidden flex items-center gap-2">
+                <!-- Mobile Theme Toggle -->
+                <button id="theme-toggle-mobile" class="text-gray-400 dark:text-gray-600 p-2 rounded-full bg-gray-800 dark:bg-gray-100 transition-colors flex items-center justify-center">
+                    <svg id="theme-toggle-sun-mobile" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.121a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm-.707-8.485a1 1 0 011.414 0l.707.707A1 1 0 115.05 7.757l-.707-.707a1 1 0 010-1.414zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z"/></svg>
+                    <svg id="theme-toggle-moon-mobile" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                </button>
+                
+                <!-- Hamburger Menu Button -->
+                <button id="menu-btn" class="text-gray-400 dark:text-gray-600 hover:text-white focus:outline-none p-2">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. MOBILE DROPDOWN MENU -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 dark:bg-white border-b border-gray-800 dark:border-gray-200 px-4 pt-2 pb-4 space-y-1">
+        <a href="#home" class="block text-gray-300 dark:text-gray-700 hover:text-cyan-400 px-3 py-2 rounded-md">Home</a>
+        <a href="#about" class="block text-gray-300 dark:text-gray-700 hover:text-cyan-400 px-3 py-2 rounded-md">About</a>        
+        <a href="#skills" class="block text-gray-300 dark:text-gray-700 hover:text-cyan-400 px-3 py-2 rounded-md">Skills</a>
+        <a href="#projects" class="block text-gray-300 dark:text-gray-700 hover:text-cyan-400 px-3 py-2 rounded-md">Projects</a>
+        <a href="#contact" class="block text-gray-300 dark:text-gray-700 hover:text-cyan-400 px-3 py-2 rounded-md">Contact</a>
+        
+        <!-- Mobile Resume Download Button -->
+        <a id="mobileDownloadResumeBtn" href="assets/Curriculum Vitae.pdf" download class="block text-center bg-cyan-500 text-white px-4 py-2 rounded-md font-semibold mt-2">
+            Download CV
+        </a>
+    </div>
+</nav>
+
+
+                            <!-- =========== Hero Section =========== -->
+
+<section id="home" class="min-h-screen flex items-center justify-center pt-16 bg-gray-900 dark:bg-gray-50 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12 w-full">
+        
+        <!-- Left Content: Text Intro -->
+        <div class="flex-1 text-center md:text-left order-2 md:order-1">
+            <span class="text-cyan-400 dark:text-cyan-600 font-semibold tracking-wide uppercase text-sm block mb-3">Welcome to my portfolio</span>
+           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white dark:text-gray-900 tracking-tight leading-tight">
+                Hi, I'm <br>
+                <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Usama Hasnat
+                </span>
+            </h1>
+            <p id="typewriter" class="text-3xl md:text-5xl font-bold text-cyan-600 dark:text-cyan-400 mt-4">
+                
+            </p>
+
+            <p class="mt-4 text-base text-white-400 dark:text-white-600 max-w-lg leading-relaxed">
+                I design and develop high-performance, modern, and interactive websites. I love writing clean code and creating user-friendly experiences.
+            </p>
+
+            
+            <!-- CTAs -->
+            <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+                <a href="#contact" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5">
+                     Hire Me
+                </a>
+                <a href="#projects" class="border border-gray-700 dark:border-gray-300 text-white dark:text-gray-800 hover:bg-gray-800 dark:hover:bg-gray-100 font-semibold px-6 py-3 rounded-lg transition-all transform hover:-translate-y-0.5">
+                    View Projects
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Content: Profile Image/Shape -->
+        <div class="flex-1 flex justify-center order-1 md:order-2">
+            <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-500 p-1.5 shadow-2xl shadow-cyan-500/20">
+                <!-- Inner clean placeholder/Image container -->
+                <div class="w-full h-full bg-gray-900 dark:bg-gray-200 rounded-full overflow-hidden flex items-center justify-center">
+                     <img src="assets/profile.png" alt="Profile" class="w-full h-full object-cover">
+                    <span class="text-gray-500 text-sm dark:text-gray-600"></span>
+                </div>
+                <!-- Decorative element -->
+                <div class="absolute -bottom-4 -right-4 w-12 h-12 bg-cyan-400 rounded-full blur-xl opacity-70 animate-pulse"></div>
+            </div>
+        </div>
+    </div>
+</section>
+                            <!-- ==================== About Section =============-->
+<section id="about" class="py-28 bg-gray-900 dark:bg-gray-50 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+            <span class="text-xs uppercase tracking-widest text-cyan-400 dark:text-cyan-600 font-semibold">Get To Know Me</span>
+            <h2 class="text-3xl sm:text-5xl font-black text-white dark:text-slate-900 mt-2 hover:text-cyan-500 transition-colors">
+                About Me
+                <div class="w-20 h-1.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
+            </h2>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="grid md:grid-cols-12 gap-12 items-stretch">
+            
+            <!-- Left Column (Bio, Meta info & Stats) -->
+            <div class="md:col-span-7 flex flex-col justify-between space-y-6">
+                <div>
+                    <h3 class="text-2xl sm:text-4xl font-bold text-white dark:text-gray-800 tracking-tight">
+                        I'm a Passionate <span class="text-cyan-400 dark:text-cyan-600">Web Developer.</span>
+                    </h3>
+                    <p class="text-gray-400 dark:text-gray-600 leading-relaxed text-sm sm:text-base mt-4">
+                        I'm <span class="text-white dark:text-gray-900 font-medium">Usama Hasnat</span>, a dedicated front-end and back-end developer focused on crafting modern, high-performance web applications. I specialize in turning complex logic into interactive, pixel-perfect digital experiences.
+                    </p>
+                    <p class="text-gray-400 dark:text-gray-600 leading-relaxed text-sm sm:text-base mt-3">
+                        Whether it is building responsive user interfaces with Tailwind CSS and React or designing relational database systems, my goal remains the same: creating scalable web applications that provide a smooth, low-latency, and highly enjoyable user experience.
+                    </p>
+                </div>
+
+               <!-- Meta Data Grid -->
+                <div class="grid grid-cols-2 gap-y-6 gap-x-4 pt-6 border-t border-gray-800 dark:border-gray-200">
+                    <div>
+                        <span class="block text-xs uppercase text-gray-500 font-semibold tracking-wider">Name</span>
+                        <span class="text-white dark:text-gray-800 font-medium text-sm sm:text-base hover:text-cyan-500 transition-colors">Usama Hasnat</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs uppercase text-gray-500 font-semibold tracking-wider">Role</span>
+                        <span class="text-white dark:text-gray-800 font-medium text-sm sm:text-base hover:text-cyan-500 transition-colors">Web Developer</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs uppercase text-gray-500 font-semibold tracking-wider">Experience</span>
+                        <span class="text-white dark:text-gray-800 font-medium text-sm sm:text-base hover:text-cyan-500 transition-colors">3+ Years</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs uppercase text-gray-500 font-semibold tracking-wider">Freelance</span>
+                        <span class="text-green-400 font-medium text-sm sm:text-base block">Available</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gray-800 dark:border-gray-200 text-center md:text-left">
+                    <div>
+                        <!-- Jitne projects aapne sach mein banaye hain, yahan likhein -->
+                        <span class="block text-2xl sm:text-3xl font-black text-cyan-400 dark:text-cyan-600">8+</span>
+                        <span class="text-[11px] uppercase tracking-wider text-gray-500 font-medium">Projects Built</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-black text-cyan-400 dark:text-cyan-600">500+</span>
+                        <span class="text-[11px] uppercase tracking-wider text-gray-500 font-medium">Hours of Coding</span>
+                    </div>
+                    <div>
+                        <!-- Coffee cancel, Chai approved! -->
+                        <span class="block text-2xl sm:text-3xl font-black text-cyan-400 dark:text-cyan-600">50+</span>
+                        <span class="text-[11px] uppercase tracking-wider text-gray-500 font-medium">Cups of Tea</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Card Layout (Height auto-aligned with Left Column) -->
+            <div class="md:col-span-5 flex">
+                <div class="w-full bg-gray-950 dark:bg-white border border-gray-800 dark:border-gray-200 p-8 rounded-2xl shadow-xl flex flex-col justify-between overflow-hidden hover:shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500">
+                    <div>
+                        <!-- Visual Anchor Icon -->
+                        <div class="text-cyan-400 dark:text-cyan-600 text-3xl font-mono mb-4">&lt;/&gt;</div>
+                        
+                        <!-- Card Heading -->
+                        <h4 class="text-xl font-bold text-white dark:text-gray-900 mb-4">
+                            Clean Code. <span class="text-cyan-400 dark:text-cyan-600">Creative Design.</span>
+                        </h4>
+                        
+                        <!-- Card Subtext -->
+                        <p class="text-gray-400 dark:text-gray-600 text-sm leading-relaxed mb-4">
+                            I focus on writing semantic, well-documented architecture and designing minimal interfaces. Every application is optimized for performance, SEO standards, and cross-browser responsiveness.
+                        </p>
+                        <!-- Card Subtext -->
+                        <p class="text-gray-400 dark:text-gray-600 text-sm leading-relaxed mb-4">
+                                Beyond structural alignment, I ensure high accessibility standards and smooth user journeys. By minimizing bundle sizes and leveraging clean scripting habits, I turn intricate structural logic into fast-loading digital products that excel under load.
+                        </p>
+                    </div>
+
+                    <!-- Skill Badges/Pills -->
+                    <div>
+                        <span class="block text-[10px] uppercase text-gray-500 font-semibold tracking-widest mb-3">Core Tech Stack</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-gray-900 dark:bg-gray-100 border border-gray-800 dark:border-gray-200 text-gray-400 dark:text-gray-700 rounded-lg text-xs font-medium hover:border-cyan-500 hover:text-cyan-500 dark:hover:text-cyan-600 transition-all cursor-default">HTML5</span>
+                            <span class="px-3 py-1.5 bg-gray-900 dark:bg-gray-100 border border-gray-800 dark:border-gray-200 text-gray-400 dark:text-gray-700 rounded-lg text-xs font-medium hover:border-cyan-500 hover:text-cyan-500 dark:hover:text-cyan-600 transition-all cursor-default">Tailwind CSS</span>
+                            <span class="px-3 py-1.5 bg-gray-900 dark:bg-gray-100 border border-gray-800 dark:border-gray-200 text-gray-400 dark:text-gray-700 rounded-lg text-xs font-medium hover:border-cyan-500 hover:text-cyan-500 dark:hover:text-cyan-600 transition-all cursor-default">JavaScript</span>
+                            <span class="px-3 py-1.5 bg-gray-900 dark:bg-gray-100 border border-gray-800 dark:border-gray-200 text-gray-400 dark:text-gray-700 rounded-lg text-xs font-medium hover:border-cyan-500 hover:text-cyan-500 dark:hover:text-cyan-600 transition-all cursor-default">ReactJS</span>
+                            <span class="px-3 py-1.5 bg-gray-900 dark:bg-gray-100 border border-gray-800 dark:border-gray-200 text-gray-400 dark:text-gray-700 rounded-lg text-xs font-medium hover:border-cyan-500 hover:text-cyan-500 dark:hover:text-cyan-600 transition-all cursor-default">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        
+                                                    <!-- ======= Technical Skills Section ======= -->
+
+<section id="skills" class="py-28 bg-gray-900 dark:bg-slate-100 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-8">
+        
+        <!-- Section Title -->
+        <div class="text-center mb-20">
+            <span class="text-cyan-400 dark:text-cyan-600 font-bold tracking-widest text-xs uppercase">My Tech Stack</span>
+            <h2 class="text-3xl sm:text-5xl font-black text-white dark:text-slate-900 mt-2 hover:text-cyan-500">Technical Expertise</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Skills Categories Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Category 1: Frontend Development -->
+            <div class="space-y-6 bg-gray-800/40 dark:bg-white p-6 rounded-2xl border border-gray-800 dark:border-slate-200 dark:shadow-lg overflow-hidden shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500">
+                <h3 class="text-xl font-bold text-cyan-400 dark:text-cyan-600 flex items-center gap-2 pb-3 border-b border-gray-700 dark:border-slate-100">
+                    <i class="fa-solid fa-code"></i> Frontend
+                </h3>
+                
+                <!-- HTML5 -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">HTML5</span><span class="text-gray-400 dark:text-slate-500">95%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-1.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- CSS3 -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">CSS3</span><span class="text-gray-400 dark:text-slate-500">95%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-1.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- Tailwind CSS -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">Tailwind CSS</span><span class="text-gray-400 dark:text-slate-500">90%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-1.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">JavaScript</span><span class="text-gray-400 dark:text-slate-500">80%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-1.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <!-- React -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">React</span><span class="text-gray-400 dark:text-slate-500">70%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-1.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <!-- Bootstrap -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">Bootstrap</span><span class="text-gray-400 dark:text-slate-500">80%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-1.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2: Backend Development -->
+            <div class="space-y-6 bg-gray-800/40 dark:bg-white p-6 rounded-2xl border border-gray-800 dark:border-slate-200 dark:shadow-lg overflow-hidden shadow-xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-1 hover:border-purple-800">
+                <h3 class="text-xl font-bold text-purple-400 dark:text-purple-600 flex items-center gap-2 pb-3 border-b border-gray-700 dark:border-slate-100">
+                    <i class="fa-solid fa-server"></i> Backend & Tools
+                </h3>
+                
+                <!-- Backend Tech -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">Node.js</span><span class="text-gray-400 dark:text-slate-500">75%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-1.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <!-- Express.js -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">Express.js</span><span class="text-gray-400 dark:text-slate-500">80%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-1.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <!-- PHP -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">PHP</span><span class="text-gray-400 dark:text-slate-500">80%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-1.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <!-- C# / .NET -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">C# / .NET</span><span class="text-gray-400 dark:text-slate-500">75%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-1.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <!-- Wordpress -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">Wordpress</span><span class="text-gray-400 dark:text-slate-500">95%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-1.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- Git & GitHub -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">Git & GitHub</span><span class="text-gray-400 dark:text-slate-500">85%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Category 3: Databases & Tools -->
+            <div class="space-y-6 bg-gray-800/40 dark:bg-white p-6 rounded-2xl border border-gray-800 dark:border-slate-200 dark:shadow-lg overflow-hidden shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 hover:border-amber-500">
+                <h3 class="text-xl font-bold text-amber-400 dark:text-amber-600 flex items-center gap-2 pb-3 border-b border-gray-700 dark:border-slate-100">
+                    <i class="fa-solid fa-toolbox"></i> Database & Design
+                </h3>
+                
+                <!-- Databases -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">(MySQL / NoSQL)</span><span class="text-gray-400 dark:text-slate-500">95%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-amber-500 to-orange-500 h-1.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- Microsoft SQL Server -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">Microsoft SQL Server</span><span class="text-gray-400 dark:text-slate-500">85%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-amber-500 to-orange-500 h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- MongoDB -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">MongoDB</span><span class="text-gray-400 dark:text-slate-500">80%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-amber-500 to-orange-500 h-1.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <!-- Graphic Design -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">Graphic Design</span><span class="text-gray-400 dark:text-slate-500">95%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-amber-500 to-orange-500 h-1.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">UI/UX Design</span><span class="text-gray-400 dark:text-slate-500">95%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-amber-500 to-orange-500 h-1.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- Responsive Design -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-semibold"><span class="text-white dark:text-slate-800">Responsive Design</span><span class="text-gray-400 dark:text-slate-500">90%</span></div>
+                    <div class="w-full bg-gray-700 dark:bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-amber-500 to-orange-500 h-1.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+                                        <!-- ==================== Projects Section ==================== -->
+
+<section id="projects" class="py-24 bg-gray-900 dark:bg-white transition-colors duration-300">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+
+            <span class="text-cyan-400 dark:text-cyan-600 font-bold tracking-widest text-xs uppercase">
+                My Portfolio
+            </span>
+
+            <h2 class="text-3xl sm:text-5xl font-black text-white dark:text-gray-900 mt-2">
+                Recent Projects
+            </h2>
+
+            <div class="w-20 h-1.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
+
+        </div>
+
+
+        <!-- ==================== Projects Grid ==================== -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+            <!-- ==================== PROJECT 1 ==================== -->
+
+            <div class="group flex flex-col bg-gray-800 dark:bg-slate-50 border border-gray-700 dark:border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-green-500/10 transition-all duration-300 hover:-translate-y-2 hover:border-green-500">
+
+                <!-- Screenshot -->
+                <div class="w-full h-52 bg-gray-950 dark:bg-slate-200 overflow-hidden flex items-center justify-center">
+
+                    <img
+                        src="assets/personal portfolio.png"
+                        alt="Personal Portfolio"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    >
+
+                </div>
+
+
+                <!-- Content -->
+                <div class="p-5 flex flex-col flex-1">
+
+                    <span class="text-[10px] font-bold text-green-400 dark:text-green-500 uppercase tracking-wider">
+                        Frontend App
+                    </span>
+
+                    <h3 class="text-lg font-bold text-white dark:text-gray-900 mt-1 group-hover:text-green-400 dark:group-hover:text-green-600 transition-colors">
+                        Personal Portfolio
+                    </h3>
+
+                    <p class="text-gray-400 dark:text-slate-600 mt-2 text-sm leading-relaxed">
+                        A modern personal portfolio website showcasing development skills,
+                        projects, services, and professional experience.
+                    </p>
+
+                    <div class="mt-auto pt-5 flex items-center gap-3 border-t border-gray-700/50 dark:border-slate-200/60">
+
+                        <a
+                            href="#"
+                            target="_blank"
+                            class="flex-1 text-center bg-green-500 hover:bg-green-600 text-white font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97] flex items-center justify-center gap-1.5"
+                        >
+                            Live Demo
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            target="_blank"
+                            class="flex-1 text-center border border-gray-700 dark:border-gray-300 text-gray-300 dark:text-gray-700 hover:bg-gray-700 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97]"
+                        >
+                            GitHub Code
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== PROJECT 2 ==================== -->
+
+            <div class="group flex flex-col bg-gray-800 dark:bg-slate-50 border border-gray-700 dark:border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500">
+
+                <div class="w-full h-52 bg-gray-950 dark:bg-slate-200 overflow-hidden flex items-center justify-center">
+
+                    <img
+                        src="assets/nexora online store.png"
+                        alt="Nexora Online Store"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    >
+
+                </div>
+
+                <div class="p-5 flex flex-col flex-1">
+
+                    <span class="text-[10px] font-bold text-cyan-400 dark:text-cyan-500 uppercase tracking-wider">
+                        E-Commerce Website
+                    </span>
+
+                    <h3 class="text-lg font-bold text-white dark:text-gray-900 mt-1 group-hover:text-cyan-400 dark:group-hover:text-cyan-600 transition-colors">
+                        Nexora Online Store
+                    </h3>
+
+                    <p class="text-gray-400 dark:text-slate-600 mt-2 text-sm leading-relaxed">
+                        A modern e-commerce website with a clean interface,
+                        responsive layouts, and a smooth shopping experience.
+                    </p>
+
+                    <div class="mt-auto pt-5 flex items-center gap-3 border-t border-gray-700/50 dark:border-slate-200/60">
+
+                        <a
+                            href="https://usamacoder14.github.io/nexora-online-store/"
+                            target="_blank"
+                            class="flex-1 text-center bg-cyan-500 hover:bg-cyan-600 text-white font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97] flex items-center justify-center gap-1.5"
+                        >
+                            Live Demo
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/usamacoder14/nexora-online-store"
+                            target="_blank"
+                            class="flex-1 text-center border border-gray-700 dark:border-gray-300 text-gray-300 dark:text-gray-700 hover:bg-gray-700 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97]"
+                        >
+                            GitHub Code
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== PROJECT 3 ==================== -->
+
+            <div class="group flex flex-col bg-gray-800 dark:bg-slate-50 border border-gray-700 dark:border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500">
+
+                <div class="w-full h-52 bg-gray-950 dark:bg-slate-200 overflow-hidden flex items-center justify-center">
+
+                    <img
+                        src="assets/glassmorphic form builder.png"
+                        alt="Glassmorphic Form Builder"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    >
+
+                </div>
+
+                <div class="p-5 flex flex-col flex-1">
+
+                    <span class="text-[10px] font-bold text-purple-400 dark:text-purple-500 uppercase tracking-wider">
+                        Form Builder
+                    </span>
+
+                    <h3 class="text-lg font-bold text-white dark:text-gray-900 mt-1 group-hover:text-purple-400 dark:group-hover:text-purple-600 transition-colors">
+                        Glassmorphic Form Builder
+                    </h3>
+
+                    <p class="text-gray-400 dark:text-slate-600 mt-2 text-sm leading-relaxed">
+                        A stylish glassmorphism-based form builder focused on
+                        modern UI, clean layouts, and interactive experiences.
+                    </p>
+
+                    <div class="mt-auto pt-5 flex items-center gap-3 border-t border-gray-700/50 dark:border-slate-200/60">
+
+                        <a
+                            href="https://usamacoder14.github.io/glassmorphic-form-builder/"
+                            target="_blank"
+                            class="flex-1 text-center bg-purple-500 hover:bg-purple-600 text-white font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97] flex items-center justify-center gap-1.5"
+                        >
+                            Live Demo
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/usamacoder14/glassmorphic-form-builder"
+                            target="_blank"
+                            class="flex-1 text-center border border-gray-700 dark:border-gray-300 text-gray-300 dark:text-gray-700 hover:bg-gray-700 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97]"
+                        >
+                            GitHub Code
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== PROJECT 4 ==================== -->
+
+            <div class="group flex flex-col bg-gray-800 dark:bg-slate-50 border border-gray-700 dark:border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-amber-500/10 transition-all duration-300 hover:-translate-y-2 hover:border-amber-500">
+
+                <div class="w-full h-52 bg-gray-950 dark:bg-slate-200 overflow-hidden flex items-center justify-center">
+
+                    <img
+                        src="assets/secure password vault generator.png"
+                        alt="Secure Password Generator"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    >
+
+                </div>
+
+                <div class="p-5 flex flex-col flex-1">
+
+                    <span class="text-[10px] font-bold text-amber-400 dark:text-amber-500 uppercase tracking-wider">
+                        Password Generator
+                    </span>
+
+                    <h3 class="text-lg font-bold text-white dark:text-gray-900 mt-1 group-hover:text-amber-400 dark:group-hover:text-amber-600 transition-colors">
+                        Secure Password Generator
+                    </h3>
+
+                    <p class="text-gray-400 dark:text-slate-600 mt-2 text-sm leading-relaxed">
+                        A secure password generation tool designed to create
+                        strong and customizable passwords with ease.
+                    </p>
+
+                    <div class="mt-auto pt-5 flex items-center gap-3 border-t border-gray-700/50 dark:border-slate-200/60">
+
+                        <a
+                            href="https://usamacoder14.github.io/secure-password-vault-generator/"
+                            target="_blank"
+                            class="flex-1 text-center bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97] flex items-center justify-center gap-1.5"
+                        >
+                            Live Demo
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/usamacoder14/secure-password-vault-generator"
+                            target="_blank"
+                            class="flex-1 text-center border border-gray-700 dark:border-gray-300 text-gray-300 dark:text-gray-700 hover:bg-gray-700 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97]"
+                        >
+                            GitHub Code
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== PROJECT 5 ==================== -->
+
+            <div class="group flex flex-col bg-gray-800 dark:bg-slate-50 border border-gray-700 dark:border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-2 hover:border-red-500">
+
+                <div class="w-full h-52 bg-gray-950 dark:bg-slate-200 overflow-hidden flex items-center justify-center">
+
+                    <img
+                        src="assets/retro pixel art maker.png"
+                        alt="Retro Pixel Art Maker"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    >
+
+                </div>
+
+                <div class="p-5 flex flex-col flex-1">
+
+                    <span class="text-[10px] font-bold text-red-400 dark:text-red-500 uppercase tracking-wider">
+                        Web Application
+                    </span>
+
+                    <h3 class="text-lg font-bold text-white dark:text-gray-900 mt-1 group-hover:text-red-400 dark:group-hover:text-red-600 transition-colors">
+                        Retro Pixel Art Maker
+                    </h3>
+
+                    <p class="text-gray-400 dark:text-slate-600 mt-2 text-sm leading-relaxed">
+                        Add your fifth project description here and briefly
+                        explain its main features and purpose.
+                    </p>
+
+                    <div class="mt-auto pt-5 flex items-center gap-3 border-t border-gray-700/50 dark:border-slate-200/60">
+
+                        <a
+                            href="https://usamacoder14.github.io/retro-pixel-art-maker/"
+                            target="_blank"
+                            class="flex-1 text-center bg-red-500 hover:bg-red-600 text-white font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97] flex items-center justify-center gap-1.5"
+                        >
+                            Live Demo
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/usamacoder14/retro-pixel-art-maker"
+                            target="_blank"
+                            class="flex-1 text-center border border-gray-700 dark:border-gray-300 text-gray-300 dark:text-gray-700 hover:bg-gray-700 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97]"
+                        >
+                            GitHub Code
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== PROJECT 6 ==================== -->
+
+            <div class="group flex flex-col bg-gray-800 dark:bg-slate-50 border border-gray-700 dark:border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500">
+
+                <div class="w-full h-52 bg-gray-950 dark:bg-slate-200 overflow-hidden flex items-center justify-center">
+
+                    <img
+                        src="assets/pandatype -speed typing tester.png"
+                        alt="Panda Type - Speed Typing Tester"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    >
+
+                </div>
+
+                <div class="p-5 flex flex-col flex-1">
+
+                    <span class="text-[10px] font-bold text-blue-400 dark:text-blue-500 uppercase tracking-wider">
+                        Web Development
+                    </span>
+
+                    <h3 class="text-lg font-bold text-white dark:text-gray-900 mt-1 group-hover:text-blue-400 dark:group-hover:text-blue-600 transition-colors">
+                        Panda Type - Speed Typing Tester
+                    </h3>
+
+                    <p class="text-gray-400 dark:text-slate-600 mt-2 text-sm leading-relaxed">
+                        Add your sixth project description here and briefly
+                        explain its main features and purpose.
+                    </p>
+
+                    <div class="mt-auto pt-5 flex items-center gap-3 border-t border-gray-700/50 dark:border-slate-200/60">
+
+                        <a
+                            href="https://usamacoder14.github.io/pandatype-speed-typing-tester/"
+                            target="_blank"
+                            class="flex-1 text-center bg-blue-500 hover:bg-blue-600 text-white font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97] flex items-center justify-center gap-1.5"
+                        >
+                            Live Demo
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/usamacoder14/pandatype-speed-typing-tester"
+                            target="_blank"
+                            class="flex-1 text-center border border-gray-700 dark:border-gray-300 text-gray-300 dark:text-gray-700 hover:bg-gray-700 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 font-bold text-xs py-2.5 px-3 rounded-lg transition-all active:scale-[0.97]"
+                        >
+                            GitHub Code
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+                                        <!-- ==================== Contact Section ==================== -->
+
+<section id="contact" class="py-24 bg-gray-900 dark:bg-gray-50 transition-colors duration-300 relative overflow-hidden">
+    <!-- Background premium subtle glows -->
+    <div class="absolute bottom-0 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none dark:hidden"></div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-cyan-400 dark:text-cyan-600 font-bold tracking-widest text-xs uppercase">Get in Touch</span>
+            <h2 class="text-3xl sm:text-5xl font-black text-white dark:text-gray-900 mt-2 hover:text-cyan-500">Let's Work Together</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Left Side: Interactive Contact Info Cards (5 Columns) -->
+            <div class="lg:col-span-5 space-y-6">
+                <div>
+                    <h3 class="text-2xl font-black text-white dark:text-gray-900 tracking-tight hover:text-cyan-500">Let's discuss something great</h3>
+                    <p class="text-gray-400 dark:text-slate-600 mt-3 leading-relaxed text-sm">
+                        I am available for freelance projects, full-time positions, or open-source collaborations. Drop a message, I usually reply within a few hours!
+                    </p>
+                </div>
+                
+                <!-- Contact Info Badges Block -->
+                <div class="space-y-4 pt-2">
+                    <!-- Email Card -->
+                    <div class="flex items-center gap-4 p-4 bg-gray-900/40 dark:bg-white border border-gray-700 dark:border-slate-200/80 rounded-2xl shadow-sm hover:border-cyan-500/40 dark:hover:border-cyan-400 transition-all group">
+                        <div class="p-3 bg-cyan-500/10 text-cyan-400 dark:text-cyan-600 text-lg rounded-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-white-500 dark:text-slate-400 uppercase tracking-wider">Email Me</p>
+                            <a href="mailto:usamasial220@gmail.com" class="font-bold text-gray-200 dark:text-gray-800 hover:text-cyan-400 dark:hover:text-cyan-600 text-sm sm:text-base break-all">usamasial220@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <!-- Discord/Phone Card -->
+                    <div class="flex items-center gap-4 p-4 bg-gray-900/40 dark:bg-white border border-gray-700 dark:border-slate-200/80 rounded-2xl shadow-sm hover:border-purple-500/40 dark:hover:border-purple-400 transition-all group">
+                        <div class="p-3 bg-purple-500/10 text-purple-400 dark:text-purple-600 text-lg rounded-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-white-500 dark:text-slate-400 uppercase tracking-wider">Phone Number</p>
+                            <span class="font-bold text-gray-200 dark:text-gray-800 hover:text-cyan-400 dark:hover:text-cyan-600 text-sm sm:text-base break-all">+92 3441548331</span>
+                        </div>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="flex items-center gap-4 p-4 bg-gray-900/40 dark:bg-white border border-gray-700 dark:border-slate-200/80 rounded-2xl shadow-sm hover:border-amber-500/40 dark:hover:border-amber-400 transition-all group">
+                        <div class="p-3 bg-amber-500/10 text-amber-400 dark:text-amber-600 text-lg rounded-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-white-500 dark:text-slate-400 uppercase tracking-wider">Location</p>
+                            <span class="font-bold text-gray-200 dark:text-gray-800 hover:text-cyan-400 dark:hover:text-cyan-600 text-sm sm:text-base break-all">Punjab, Pakistan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Clean Modern Form (7 Columns) -->
+            <div class="lg:col-span-7">
+                <form id="contact-form" class="space-y-4 bg-gray-900/60 dark:bg-white p-6 sm:p-8 rounded-3xl border border-gray-700 dark:border-slate-200/80 shadow-2xl shadow-gray-950/20 
+                dark:shadow-slate-200/60">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 dark:text-gray-700 mb-2">Name</label>
+                        <input type="text" id="user_name" name="user_name" required class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2.5 border border-gray-800 
+                        dark:border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-purple-500 outline-none transition" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 dark:text-gray-700 mb-2">Email</label>
+                        <input type="email" id="user_email" name="user_email" required class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2.5 border border-gray-800 
+                        dark:border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-purple-500 outline-none transition" placeholder="john@gmail.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 dark:text-gray-700 mb-2">Message</label>
+                        <textarea id="user_message" name="message" rows="4" required class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2.5 border border-gray-800 
+                        dark:border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-purple-500 outline-none transition" placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" id="sendBtn" class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold text-sm py-3.5 rounded-xl 
+                    transition-all shadow-lg shadow-cyan-500/20 transform active:scale-[0.98]">
+                        <span id="btnText">Send Message</span>
+                        <i class="fa-solid fa-paper-plane ml-2 text-xs"></i>
+                    </button>
+                </form>
+
+            </div>
+            
+        </div>
+    </div>
+</section>                
+                                <!-- ================= FOOTER START ================= -->
+
+<footer class="bg-[#070D18] dark:bg-gray-50 border-t border-cyan-500/20 dark:border-gray-200 text-gray-300 dark:text-gray-600 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+
+        <!-- Fixed Grid: Desktop par 4 Columns layout distribute kiya hai jo design ko balance karega -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+            <!-- Column 1: Brand & Socials (Left Side) -->
+            <div class="lg:col-span-2 space-y-5">
+                <a href="#home" class="inline-block">
+                    <h2 class="text-2xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent tracking-tight">
+                       Usama H.   
+                    </h2>
+                </a>
+                <p class="text-sm leading-7 text-gray-400 dark:text-gray-600 max-w-sm">
+                        Crafting innovative, high-performance 
+                    <br>web experiences using custom code.
+                    <br>Let's engineer your digital footprints 
+                    <br>together.
+                </p>
+
+                <!-- Social Icons  -->
+                <div class="flex gap-3 mt-6">
+
+                    <!-- Facebook -->
+                    <a href="https://github.com/usamacoder14"
+                        class="w-10 h-10 rounded-full bg-[#121826] dark:bg-gray-100 border border-gray-700 dark:border-gray-300 flex items-center justify-center text-white dark:text-gray-700 hover:bg-cyan-500 hover:text-black dark:hover:bg-cyan-500 dark:hover:text-black hover:border-cyan-500 dark:hover:border-cyan-500 transition shadow-sm">
+                        <i class="fa-brands fa-github text-sm"></i>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/codewith.usama/"
+                        class="w-10 h-10 rounded-full bg-[#121826] dark:bg-gray-100 border border-gray-700 dark:border-gray-300 flex items-center justify-center text-white dark:text-gray-700 hover:bg-cyan-500 hover:text-black dark:hover:bg-cyan-500 dark:hover:text-black hover:border-cyan-500 dark:hover:border-cyan-500 transition shadow-sm">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/usama-hasnat-web/"
+                        class="w-10 h-10 rounded-full bg-[#121826] dark:bg-gray-100 border border-gray-700 dark:border-gray-300 flex items-center justify-center text-white dark:text-gray-700 hover:bg-cyan-500 hover:text-black dark:hover:bg-cyan-500 dark:hover:text-black hover:border-cyan-500 dark:hover:border-cyan-500 transition shadow-sm">
+                        <i class="fa-brands fa-linkedin-in text-sm"></i>
+                    </a>
+
+                    <!-- Youtube -->
+                    <a href="https://www.youtube.com/channel/404 - Not Found"
+                        class="w-10 h-10 rounded-full bg-[#121826] dark:bg-gray-100 border border-gray-700 dark:border-gray-300 flex items-center justify-center text-white dark:text-gray-700 hover:bg-cyan-500 hover:text-black dark:hover:bg-cyan-500 dark:hover:text-black hover:border-cyan-500 dark:hover:border-cyan-500 transition shadow-sm">
+                        <i class="fa-brands fa-youtube text-sm"></i>
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="lg:pl-0 lg:-ml-12">
+                <!-- Sirf heading ko mazeed left push karne ke liye lg:-ml-4 add kiya hai -->
+                <h3 class="text-lg font-bold text-gray-200 dark:text-gray-900 hover:text-cyan-500 mb-5 transition-colors lg:-ml-4">
+                    Quick Links
+                </h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#home" class="hover:text-cyan-400 transition-colors">Home</a></li>
+                    <li><a href="#about" class="hover:text-cyan-400 transition-colors">About</a></li>
+                    <li><a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+
+
+            <!-- Newsletter -->
+            <div>
+                <h3 class="text-lg font-bold text-gray-200 dark:text-gray-900 hover:text-cyan-500 mb-5 transition-colors">
+                    Stay Updated
+                </h3>
+                <p class="text-sm text-gray-400 dark:text-gray-600 leading-6 mb-5">
+                    Subscribe to receive my latest tech insights, project case studies, and occasional development updates.
+                </p>
+                <form id="newsletterForm" class="flex flex-col gap-3">
+                    <input
+                        id="newsletterEmail"
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                        class="w-full bg-[#121826] dark:bg-white border border-gray-700 dark:border-gray-300 rounded-xl px-4 py-3 text-sm text-white dark:text-gray-900 placeholder-gray-500 dark:placeholder-gray-400 outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all">
+
+                    <button
+                        id="newsletterBtn"
+                        type="submit"
+                        class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold text-sm py-3.5 rounded-xl transition-all shadow-lg shadow-cyan-500/20 transform active:scale-[0.98] flex items-center justify-center gap-2">
+                        <i id="newsletterIcon" class="fa-solid fa-paper-plane text-xs"></i>
+                        <span id="newsletterBtnText">Subscribe</span>
+                    </button>
+
+                </form>
+            </div>
+
+        </div> <!-- Outer Grid End -->
+
+        <!-- Bottom Border -->
+        <div class="border-t border-gray-800 dark:border-gray-200 mt-12 pt-7">
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500 dark:text-gray-600">
+
+                <p>
+                   &copy; 2026 Usama Hasnat. All rights reserved.
+                </p>
+
+                <!-- Back to Top Link Fixed -->
+                <div class="flex gap-6">
+                    <a href="#home" class="flex items-center gap-2 hover:text-cyan-400 dark:hover:text-cyan-600 transition-colors duration-300 font-medium group">
+                        Back to Top 
+                        <i class="fa-solid fa-arrow-up text-xs transform group-hover:-translate-y-1 transition-transform duration-300"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+</footer>
+
+                               <!-- ================= FOOTER END ============================== -->
+
+                                 <!-- ================= TOAST CONTAINER START ================= -->
+
+           <div id="toastContainer" class="fixed top-24 left-1/2 -translate-x-1/2 z-[9999] flex flex-col gap-3 pointer-events-none"></div>
+
+                                <!-- ================= TOAST CONTAINER  END ================= -->
+
+    <!-- JavaScript File -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
