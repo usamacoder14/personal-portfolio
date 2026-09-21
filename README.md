@@ -10,9 +10,9 @@ This portfolio combines modern web development with clean UI design to create a 
 
 👉 **[View Live Portfolio](https://YOUR-VERCEL-URL.vercel.app/)**
 
-📸 Preview
+📸 Preview 
 
-![Personal Portfolio Preview](assets/personalportfolio.png)
+![Personal Portfolio Preview](assets/personal%20portfolio.png)
 
 ---
 
