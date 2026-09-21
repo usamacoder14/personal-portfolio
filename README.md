@@ -193,9 +193,8 @@ my-personal-portfolio/
 │   ├── nexora online store.png
 │   ├── glassmorphic form builder.png
 │   ├── secure password vault generator.png
-│   ├── project-5.png
-│   ├── project-6.png
-│   └── personal-portfolio.png
+│   ├── retro pixel art maker.png
+│   ├── pandatype - speed typing tester.png
 │
 └── README.md
 
