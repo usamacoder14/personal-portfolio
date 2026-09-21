@@ -8,7 +8,7 @@ This portfolio combines modern web development with clean UI design to create a 
 
 ## 🌐 Live Demo
 
-👉 **[View Live Portfolio](https://YOUR-VERCEL-URL.vercel.app/)**
+👉 **[View Live Portfolio](https://usamacoder14.github.io/personal-portfolio/)**
 
 📸 Preview 
 
