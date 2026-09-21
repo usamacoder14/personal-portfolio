@@ -12,7 +12,7 @@ This portfolio combines modern web development with clean UI design to create a 
 
 📸 Preview
 
-![Personal Portfolio Preview](assets/personalportfolio.png/)
+![Personal Portfolio Preview](/assets/personal portfolio.png/)
 
 ---
 
